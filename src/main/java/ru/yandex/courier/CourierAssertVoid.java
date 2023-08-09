@@ -31,20 +31,6 @@ public class CourierAssertVoid {
                 .body("message", equalTo("Недостаточно данных для создания учетной записи"));
     }
 
-    @Step("Удаление курьера с существующим id")
-    public void deleteCourierWithExistId(ValidatableResponse response){
-        response
-                .assertThat()
-                .statusCode(SC_OK)
-                .body("ok", is(true));
-    }
-    @Step("Удаление курьера с не существующим id")
-    public void deleteCourierWithNotExistId(ValidatableResponse response){
-        response
-                .assertThat()
-                .statusCode(SC_NOT_FOUND)
-                .body("message", equalTo("Курьера с таким id нет."));
-    }
 
     @Step("Успешный логин курьера и получение его id")
     public void successLoginCourierAndTakeId(ValidatableResponse response){
