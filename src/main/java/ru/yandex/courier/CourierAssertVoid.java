@@ -27,7 +27,7 @@ public class CourierAssertVoid {
     public void createCourierWithNotValidData(ValidatableResponse response){
         response
                 .assertThat()
-                .statusCode(SC_REQUEST_TIMEOUT)
+                .statusCode(SC_BAD_REQUEST)
                 .body("message", equalTo("Недостаточно данных для создания учетной записи"));
     }
 
